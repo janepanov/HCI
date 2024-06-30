@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <img class="w-75 mb-5" src="https://media.cnn.com/api/v1/images/stellar/prod/160502155618-terranea-vista-pool.jpg">
+    <div class="mt-5 mb-5 offset-2 row">
+        <div class="col-4">
+            <h1 class="text-left">About Us</h1><br>
+            <p class="text-left">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p><br>
+            <div class="text-left">
+                <button class="btn btn-dark text-light rounded-4">Contact Us</button>
+            </div>
+        </div>
+        <img class="col-7" src="https://media.cnn.com/api/v1/images/stellar/prod/160502155618-terranea-vista-pool.jpg" width="100%">
+    </div>
+    <div class="bg-light">
+        <div class="offset-2 col-8 pb-5 pt-5">
+            <h1 class="text-center">Available Rooms</h1>
+            <div class="text-center offset-4 col-4">
+                <hr style="border: none; height: 5px; color: #000; background-color: #000">
+            </div><br>
+            <div class="mb-5 row">
+                {% for room in rooms %}
+                <div class="col-4 mb-4">
+                    <div class="pt-5 pb-5 border bg-white" style="width: 98%">
+                        <h1 class="text-center">Number: {{ room.room_number }}</h1>
+                        <h3 class="text-center">Available Beds: {{ room.beds }}</h3>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div>
+        <h1 class="text-center mt-5">GALLERY</h1>
+    </div>
+    <div class="row offset-2 col-8 pt-5 pb-2">
+        <img class="col-3" src="https://aremorch.com/wp-content/uploads/2016/09/The-Details-That-Matter-Top-Things-Every-Luxury-Hotel-Room-Should-Have.png" width="100%" height="100%">
+        <img class="col-3" src="https://assets.architecturaldigest.in/photos/65b2aecf269da4a0ee6c9b40/master/w_1600%2Cc_limit/atr.royalmansion-bedroom2-mr.jpg" width="100%" height="100%">
+        <img class="col-3" src="https://aremorch.com/wp-content/uploads/2016/09/The-Details-That-Matter-Top-Things-Every-Luxury-Hotel-Room-Should-Have.png" width="100%" height="100%">
+        <img class="col-3" src="https://assets.architecturaldigest.in/photos/65b2aecf269da4a0ee6c9b40/master/w_1600%2Cc_limit/atr.royalmansion-bedroom2-mr.jpg" width="100%" height="100%">
+    </div>
+    <div class="row offset-2 col-8 pt-3 pb-5">
+        <img class="col-3" src="https://assets.architecturaldigest.in/photos/65b2aecf269da4a0ee6c9b40/master/w_1600%2Cc_limit/atr.royalmansion-bedroom2-mr.jpg" width="100%" height="100%">
+        <img class="col-3" src="https://aremorch.com/wp-content/uploads/2016/09/The-Details-That-Matter-Top-Things-Every-Luxury-Hotel-Room-Should-Have.png" width="100%" height="100%">
+        <img class="col-3" src="https://assets.architecturaldigest.in/photos/65b2aecf269da4a0ee6c9b40/master/w_1600%2Cc_limit/atr.royalmansion-bedroom2-mr.jpg" width="100%" height="100%">
+        <img class="col-3" src="https://aremorch.com/wp-content/uploads/2016/09/The-Details-That-Matter-Top-Things-Every-Luxury-Hotel-Room-Should-Have.png" width="100%" height="100%">
+    </div>
+
+{% endblock %}

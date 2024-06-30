@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ reservation.confirmed_by }}</h1>
+    <h2>{{ reservation.from_date }} - {{ reservation.to_date }}</h2>
+    <h3>{{ reservation.room.room_number }}</h3>
+{% endblock %}

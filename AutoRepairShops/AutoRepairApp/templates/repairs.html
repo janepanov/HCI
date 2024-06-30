@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="bg-light pb-4">
+    <div class="container col-8 offset-2">
+        <div class="row pt-4">
+            {% for repair in repairs %}
+            <div class="col-4 mb-4">
+                <div class="card" style="width: 18rem; border-color: deeppink; border-radius: 2px">
+                    <img src="{{ MEDIA_URL }}{{ repair.image.url }}" class="card-img-top" alt="..." height="250px;">
+                    <div class="card-body bg-dark">
+                        <h1 class="card-title text-light">{{ repair.code }}</h1>
+                        <p class="text-secondary">{{ repair.car.manufacturer.name }} {{ repair.car.type}}</p>
+                        <p class="text-light">{{ repair.description }}</p>
+                        <input class="bg-dark border border-3 border-danger text-danger me-3" type="button" value="Fix"/>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container col-8 offset-2 mt-5">
+        <form action="/repairs/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <input class="btn btn-primary text-light mt-4" type="submit" value="Submit">
+    </form>
+    </div>
+</div>
+
+
+{% endblock %}

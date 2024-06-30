@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <div class="offset-2 col-8 pb-5 pt-5">
+            <h1 class="text-center">Reservations</h1>
+            <div class="text-center offset-4 col-4">
+                <hr style="border: none; height: 5px; color: #000; background-color: #000">
+            </div><br>
+            <div class="mb-5 row">
+                {% for reservation in reservations %}
+                <div class="col-4 mb-4">
+                    <div class="pt-5 pb-5 border bg-white" style="width: 98%">
+                        <h1 class="text-center">Code: {{ reservation.code }}</h1>
+                        <p class="text-center mt-2">Date: {{ reservation.from_date }} - {{ reservation.to_date }}</p>
+                        <p class="text-center">Room: {{ reservation.room.room_number }}</p><hr>
+                        <h3 class="text-center mt-3">ID of visitor:</h3>
+                        <div class="text-center mt-5">
+                            <img src="{{ MEDIA_URL }}{{ reservation.id_picture.url }}" height="200px;" width="90%;">
+                        </div>
+                        <hr>
+                        <h5 class="text-center mt-2">Confirmed by: {{ reservation.confirmed_by.name }} {{ reservation.confirmed_by.surname }}</h5>
+                        <a href="{% url "details reservation" reservation.id %}">Details>></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+{% endblock %}

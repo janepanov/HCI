@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Add exhibition
+{% endblock %}
+
+{% block content %}
+    <div class="offset-2 col-8 mt-5 border border-2 p-4">
+        <form action="/add/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+        <button class="btn btn-primary mt-4" type="submit">Submit</button>
+        </form>
+    </div>
+
+{% endblock %}
