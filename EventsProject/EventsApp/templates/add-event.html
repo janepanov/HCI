@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="container offset-3 col-6 offset-2 mt-5 p-5 border border-2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7ETWe3e7EB8rs_s3rgc3mBmRIEELY_a8n6A&s" width="200px;" height="200px;">
+        <h1>Ask for event</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        <br>
+        <formaction="/event/add" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <button class="offset-10  btn btn-dark" type="submit">Add event</button>
+        </form>
+    </div>
+
+{% endblock %}

@@ -38,6 +38,7 @@ class EmployeeAdmin(admin.ModelAdmin):
 
 class ReservationAdmin(admin.ModelAdmin):
     list_display = ('code', 'room',)
+    exclude = ('user', )
 
     def save_model(self, request, obj, form, change):
         if obj.room.is_clean:

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row my-5">
+    {% for product in products %}
+        <div class="col-3 my-5">
+            <div class="offset-2">
+                <div class="text-center">
+                    <img src="{{ MEDIA_URL }}{{ product.image.url }}" height="300px" width="90%">
+                </div>
+                <p class="text-center">{{ product.name }}</p>
+                <p class="text-center"><b>${{ product.price }}</b></p>
+            </div>
+        </div>
+    {% endfor %}
+    
+    </div>
+    
+    <div class="offset-3 col-6 my-5 border border-2 p-4">
+        <form method="post" action="/outofstock/" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <div class="text-center">
+                <button class="btn btn-primary form-control p-3 text-center">Add</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

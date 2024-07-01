@@ -9,7 +9,7 @@
             <p>{{ e.description }}</p>
             <p>{{ e.location }}</p>
         </div>
-        <div class="offset-1 col 2 mb-5">
+        <div class="offset-1 col 4 mb-5">
             {% for ap in e.get_art_pieces %}
                 <img src="{{ MEDIA_URL }}{{ ap.image.url }}" height="250px";>
             {% endfor %}

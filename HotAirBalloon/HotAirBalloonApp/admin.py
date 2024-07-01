@@ -22,6 +22,7 @@ class PilotAdmin(admin.ModelAdmin):
     list_display = ("name", "surname",)
 
 
+
 class FlightAdmin(admin.ModelAdmin):
     exclude = ("user", )
 

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row mt-5 mb-5">
+    {% for book in books %}
+        <div class="col-4 my-4 border border-2 p-2">
+            <div class="">
+                <div class="text-center">
+                    <img src="{{ MEDIA_URL }}{{ book.cover_image.url }}" height="300px;" width="90%">
+                </div>
+                <h1 class="text-center">
+                    {{ book.title }} - {{ book.isbn }}
+                </h1>
+                
+                <p class="text-center">
+                    {{ book.genre }}
+                </p>
+                
+                <p class="text-center">
+                    {{ book.description }}
+                </p>
+
+                <div class="text-center">
+                    <button class="btn btn-dark">
+                        <a href="{% url "edit_book" book.id %}">Edit book</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
